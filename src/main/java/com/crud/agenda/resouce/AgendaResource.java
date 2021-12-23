@@ -35,7 +35,7 @@ public class AgendaResource {
 		return ResponseEntity.ok().body(obj);
 	}
 		
-	@CrossOrigin()
+	
 	@GetMapping(value ="/open")
 	public ResponseEntity<List<Agenda>> listOpen(){
 	List<Agenda> list = service.findAllOpen();
