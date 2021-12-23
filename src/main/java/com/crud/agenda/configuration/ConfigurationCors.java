@@ -17,6 +17,8 @@ public class ConfigurationCors {
 		CorsConfiguration config = new CorsConfiguration().applyPermitDefaultValues();
 		config.addAllowedMethod(HttpMethod.PUT);
 		config.addAllowedMethod(HttpMethod.DELETE);
+		config.addAllowedMethod(HttpMethod.GET);
+		config.addAllowedMethod(HttpMethod.POST);
 		source.registerCorsConfiguration("/**", config);
 		FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
 		bean.setOrder(0);
