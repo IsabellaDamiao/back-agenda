@@ -19,9 +19,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.crud.agenda.domian.Agenda;
 import com.crud.agenda.service.AgendaService;
 
-
+@CrossOrigin("*")
 @RestController
-@RequestMapping(value = "/agenda")
+@RequestMapping(value = "")
 public class AgendaResource {
 	
 	
@@ -49,7 +49,7 @@ public class AgendaResource {
 		return ResponseEntity.ok().body(list);
 	}
 	
-	@CrossOrigin
+	
 	@GetMapping
 	public ResponseEntity<List<Agenda>> listAll(){
 	List<Agenda> list = service.findAll();
@@ -64,7 +64,7 @@ public class AgendaResource {
 		return ResponseEntity.created(uri).build();
 	}
 	
-	
+
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<Void> delete(@PathVariable Integer id) {
 		service.delete(id);
