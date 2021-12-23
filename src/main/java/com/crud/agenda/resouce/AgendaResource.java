@@ -21,7 +21,7 @@ import com.crud.agenda.service.AgendaService;
 
 @CrossOrigin(origins = "http://localhost:4200/", allowCredentials = "true")
 @RestController
-@RequestMapping(value = "/crud-agenda")
+@RequestMapping(value = "/agenda")
 public class AgendaResource {
 	
 	@Autowired
