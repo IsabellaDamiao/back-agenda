@@ -1,20 +1,29 @@
 package com.crud.agenda.configuration;
 
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
-@SuppressWarnings("deprecation")
-@RestController
-@CrossOrigin
-public class ConfigurationCors extends WebMvcConfigurerAdapter {
 
-    @Override
+
+@Configuration
+@EnableWebMvc
+public class ConfigurationCors implements WebMvcConfigurer {
+
+	@Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/agenda/**");
+
+        registry.addMapping("/**")
+            .allowedOrigins("https://domain2.com")
+            .allowedMethods("PUT", "DELETE")
+            .allowedHeaders("header1", "header2", "header3")
+            .exposedHeaders("header1", "header2")
+            .allowCredentials(true).maxAge(3600);
+
+        // Add more mappings...
     }
 }
 
