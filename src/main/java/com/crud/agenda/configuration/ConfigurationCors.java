@@ -16,7 +16,7 @@ public class ConfigurationCors implements WebMvcConfigurer {
 	@Override
     public void addCorsMappings(CorsRegistry registry) {
 
-        registry.addMapping("/agenda/**")
+        registry.addMapping("/**")
             .allowedOrigins("*")
             .allowedMethods("PUT", "DELETE")
             .allowedHeaders("header1", "header2", "header3")
