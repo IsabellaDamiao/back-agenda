@@ -19,7 +19,7 @@ public class ConfigurationCors {
         	
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/agenda/**").allowedOrigins("*");
+                registry.addMapping("/**").allowedOrigins("*");
             }
         };
     }
