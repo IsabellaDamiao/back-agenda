@@ -21,7 +21,7 @@ import com.crud.agenda.service.AgendaService;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping(value = "")
+@RequestMapping(value = "/agenda")
 public class AgendaResource {
 	
 	
