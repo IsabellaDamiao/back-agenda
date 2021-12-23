@@ -27,30 +27,35 @@ public class AgendaResource {
 	@Autowired
 	private AgendaService service;
 	
+	@CrossOrigin
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Agenda> findyById(@PathVariable Integer id) {
 		Agenda obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
 		
+	@CrossOrigin
 	@GetMapping(value ="/open")
 	public ResponseEntity<List<Agenda>> listOpen(){
 	List<Agenda> list = service.findAllOpen();
 		return ResponseEntity.ok().body(list);
 	}
 	
+	@CrossOrigin
 	@GetMapping(value ="/close")
 	public ResponseEntity<List<Agenda>> listClose(){
 	List<Agenda> list = service.findAllClosen();
 		return ResponseEntity.ok().body(list);
 	}
 	
+	@CrossOrigin
 	@GetMapping
 	public ResponseEntity<List<Agenda>> listAll(){
 	List<Agenda> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 	
+	@CrossOrigin
 	@PostMapping
 	public ResponseEntity<Agenda> create(@RequestBody Agenda obj) {
 		obj = service.create(obj);
@@ -58,12 +63,14 @@ public class AgendaResource {
 		return ResponseEntity.created(uri).build();
 	}
 	
+	@CrossOrigin
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<Void> delete(@PathVariable Integer id) {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
 	
+	@CrossOrigin
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<Agenda> update(@PathVariable Integer id, @RequestBody Agenda obj) {
 		Agenda newObj = service.update(id, obj);
