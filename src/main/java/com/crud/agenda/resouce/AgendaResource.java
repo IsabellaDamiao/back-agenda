@@ -19,7 +19,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.crud.agenda.domian.Agenda;
 import com.crud.agenda.service.AgendaService;
 
-@CrossOrigin( origins = "http://localhost:4200/", maxAge = 3600)
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value = "/agenda")
 public class AgendaResource {
